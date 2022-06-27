@@ -12,42 +12,53 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Weater App</title>
+    <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <div class="row">
-          <div class="col-2">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="party cloud"
-            />
-            27 °C | °F
-          </div>
-          <div class="col-3">
-            <ul>
-              <li>Chance of precipitation: 3%</li>
-              <li>Humidity: 55%</li>
-              <li>Wind: 13 km/h</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <h2>New York, USA</h2>
-            <ul>
-              <li>Friday 2:00 PM</li>
-              <li>Partly cloudy</li>
-            </ul>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-4">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="party cloud"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>27</strong>
+                  <span class="units"
+                    >°C | <a href="#" class="fahrenheit">°F</a></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <ul class="discription">
+                <li>Chance of precipitation: 3%</li>
+                <li>Humidity: 55%</li>
+                <li>Wind: 13 km/h</li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h2>New York, USA</h2>
+              <ul class="date">
+                <li>Friday 2:00 PM</li>
+                <li>Partly cloudy</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <small>
+          <a
+            href="https://github.com/Vedina2022/Vanilla-weather-app.git"
+            target="_blank"
+            >Open-sourse code</a
+          >, by Nadiia Kyshinska
+        </small>
       </div>
-      <small>
-        <a
-          href="https://github.com/Vedina2022/Vanilla-weather-app.git"
-          target="_blank"
-          >Open-sourse code</a
-        >, by Nadiia Kyshinska
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
