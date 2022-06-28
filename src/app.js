@@ -29,6 +29,9 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
+  celciusTemperature = response.data.main.temp;
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -52,5 +55,33 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("celsius");
+  fahrengeitLink.classList.add("celsius");
+  celsiusLink.classList.add("fahrenheit");
+
+  let fahrenheitTemperature = celciusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  fahrengeitLink.classList.remove("celsius");
+  celsiusLink.classList.add("celsius");
+
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+let celciusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrengeitLink = document.querySelector("#fahrengeit-link");
+fahrengeitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Mykolaiv");

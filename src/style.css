@@ -79,11 +79,7 @@ li:first-letter {
   font-weight: 400;
   line-height: 60px;
 }
-.weather-temperature .units {
-  position: relative;
-  font-size: 16px;
-  top: -26px;
-}
+
 .col-sm {
   padding: 0;
 }
@@ -91,10 +87,24 @@ li:first-letter {
   padding: 0;
   width: 190px;
 }
-.fahrenheit {
+.weather-temperature .units {
+  color: #202124;
+  position: relative;
+  font-size: 16px;
+  top: -26px;
+}
+.weather-temperature .fahrenheit {
   color: #87757a;
   text-decoration: none;
 }
-.fahrenheit:hover {
+.weather-temperature .fahrenheit:hover {
   color: #87757a;
+}
+.weather-temperature .celsius {
+  color: #202124;
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature .celsius:hover {
+  color: #202124;
 }
